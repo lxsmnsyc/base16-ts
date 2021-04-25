@@ -1,0 +1,124 @@
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+  color: var(--base05);
+  background: var(--base00);
+}
+
+.hljs ::selection {
+  color: var(--base03);
+}
+
+
+/* purposely do not highlight these things */
+.hljs-formula,
+.hljs-params,
+.hljs-property
+{}
+
+/* base03 - #626483 -  Comments, Invisibles, Line Highlighting */
+.hljs-comment {
+  color: var(--base03);
+}
+
+/* base04 -  Dark Foreground (Used for status bars) */
+.hljs-tag {
+  color: var(--base04);
+}
+
+/* base05 -  Default Foreground, Caret, Delimiters, Operators */
+.hljs-subst,
+.hljs-punctuation,
+.hljs-operator {
+  color: var(--base05);
+}
+
+.hljs-operator {
+  opacity: 0.7;
+}
+
+/* base08 - Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted */
+.hljs-bullet,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-deletion {
+  color: var(--base08);
+}
+
+/* base09 - Integers, Boolean, Constants, XML Attributes, Markup Link Url */
+.hljs-symbol,
+.hljs-number,
+.hljs-link,
+.hljs-attr,
+.hljs-variable.constant_,
+.hljs-literal {
+  color: var(--base09);
+}
+
+/* base0A - Classes, Markup Bold, Search Text Background */
+.hljs-title,
+.hljs-class .hljs-title,
+.hljs-title.class_
+{
+  color: var(--base0A);
+}
+
+.hljs-strong {
+  font-weight:bold;
+  color: var(--base0A);
+}
+
+/* base0B - Strings, Inherited Class, Markup Code, Diff Inserted */
+.hljs-code,
+.hljs-addition,
+.hljs-title.class_.inherited__,
+.hljs-string {
+  color: var(--base0B);
+}
+
+/* base0C - Support, Regular Expressions, Escape Characters, Markup Quotes */
+.hljs-built_in,
+.hljs-doctag, /* guessing */
+.hljs-quote,
+.hljs-keyword.hljs-atrule,
+.hljs-regexp {
+  color: var(--base0C);
+}
+
+/* base0D - Functions, Methods, Attribute IDs, Headings */
+.hljs-function .hljs-title,
+.hljs-attribute,
+.ruby .hljs-property,
+.hljs-title.function_,
+.hljs-section {
+  color: var(--base0D);
+}
+
+/* base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed */
+.hljs-type,
+/* .hljs-selector-id, */
+/* .hljs-selector-class, */
+/* .hljs-selector-attr, */
+/* .hljs-selector-pseudo, */
+.hljs-template-tag,
+.diff .hljs-meta,
+.hljs-keyword {
+  color: var(--base0E);
+}
+.hljs-emphasis {
+  color: var(--base0E);
+  font-style: italic;
+}
+
+/* base0F - Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?> */
+.hljs-meta {
+  color: var(--base0F);
+}
+
+.hljs-meta-keyword {
+  font-weight: bold;
+}

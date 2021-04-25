@@ -1,0 +1,140 @@
+:root {
+  --base00: '#181818';
+  --base01: '#282828';
+  --base02: '#383838';
+  --base03: '#585858';
+  --base04: '#b8b8b8';
+  --base05: '#d8d8d8';
+  --base06: '#e8e8e8';
+  --base07: '#f8f8f8';
+  --base08: '#ab4642';
+  --base09: '#dc9656';
+  --base0A: '#f7ca88';
+  --base0B: '#a1b56c';
+  --base0C: '#86c1b9';
+  --base0D: '#7cafc2';
+  --base0E: '#ba8baf';
+  --base0F: '#a16946';
+}
+
+body {
+  background-color: var(--base00);
+  color: var(--base07);
+  font-family: 'menlo', 'consolas', monospace;
+
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+section {
+  width: 100%;
+
+  margin: 2rem 0px;
+}
+
+.color-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color-card {
+  width: 12.5%;
+}
+
+.color-card::before {
+  content: '';
+  padding-bottom: 100%;
+  display: block;
+}
+
+.color-card-content {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.color-card .color-card-name {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.color-card .color-card-value {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.color-card:nth-child(1) {
+  background-color: var(--base00);
+}
+.color-card:nth-child(2) {
+  background-color: var(--base01);
+}
+.color-card:nth-child(3) {
+  background-color: var(--base02);
+}
+.color-card:nth-child(4) {
+  background-color: var(--base03);
+}
+.color-card:nth-child(5) {
+  background-color: var(--base04);
+  color: var(--base00);
+}
+.color-card:nth-child(6) {
+  background-color: var(--base05);
+  color: var(--base00);
+}
+.color-card:nth-child(7) {
+  background-color: var(--base06);
+  color: var(--base00);
+}
+.color-card:nth-child(8) {
+  background-color: var(--base07);
+  color: var(--base00);
+}
+.color-card:nth-child(9) {
+  background-color: var(--base09);
+  color: var(--base00);
+}
+.color-card:nth-child(10) {
+  background-color: var(--base0A);
+  color: var(--base00);
+}
+.color-card:nth-child(11) {
+  background-color: var(--base0B);
+  color: var(--base00);
+}
+.color-card:nth-child(12) {
+  background-color: var(--base0C);
+  color: var(--base00);
+}
+.color-card:nth-child(13) {
+  background-color: var(--base0D);
+  color: var(--base00);
+}
+.color-card:nth-child(14) {
+  background-color: var(--base0E);
+  color: var(--base00);
+}
+.color-card:nth-child(15) {
+  background-color: var(--base0F);
+  color: var(--base00);
+}
+.color-card:nth-child(16) {
+  background-color: var(--base07);
+  color: var(--base00);
+}
+
+.code {
+  white-space: pre;
+  border: 1px solid var(--base01);
+}
+
+footer {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+a {
+  color: var(--base07);
+}
