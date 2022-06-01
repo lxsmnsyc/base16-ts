@@ -1,14 +1,14 @@
 {
   "exclude": ["node_modules"],
+  "include": ["src"],
   "compilerOptions": {
     "module": "ESNext",
     "lib": ["DOM", "ESNext"],
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
-    "rootDir": "./src",
+    "rootDir": "./",
     "strict": true,
-    "isolatedModules": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,

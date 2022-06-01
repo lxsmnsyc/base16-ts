@@ -1,19 +1,19 @@
-import { schemes } from "base16-ts";
-import { useEffect } from "react";
-import ColorCard from "./ColorCard";
-import Footer from "./Footer";
-import Highlighter from "./Highlighter";
-import SchemeTitle from "./SchemeTitle";
-import Navigator from "./Navigator";
+import { schemes } from 'base16-ts';
+import { JSX } from 'solid-js';
+import ColorCard from './ColorCard';
+import Footer from './Footer';
+import Highlighter from './Highlighter';
+import SchemeTitle from './SchemeTitle';
+import Navigator from './Navigator';
 
 interface PageContentProps {
-  scheme: string;
+  scheme: keyof typeof schemes;
 }
 
-export default function PageContent({ scheme }: PageContentProps): JSX.Element {
-  const currentScheme = schemes[scheme];
+export default function PageContent(props: PageContentProps): JSX.Element {
+  const currentScheme = $memo(schemes[props.scheme]);
 
-  useEffect(() => {
+  $effect(() => {
     // Update root variables
     const root = document.documentElement;
     root.style.setProperty('--base00', currentScheme.base00);
@@ -32,16 +32,16 @@ export default function PageContent({ scheme }: PageContentProps): JSX.Element {
     root.style.setProperty('--base0D', currentScheme.base0D);
     root.style.setProperty('--base0E', currentScheme.base0E);
     root.style.setProperty('--base0F', currentScheme.base0F);
-  }, [scheme]);
+  });
 
   return (
-    <div className="container">
+    <div class="container">
       <SchemeTitle scheme={currentScheme} />
       <section>
         <h3>{`by: ${currentScheme.author}`}</h3>
-        <Navigator scheme={scheme} />
+        <Navigator scheme={props.scheme} />
       </section>
-      <section className="color-cards">
+      <section class="color-cards">
         <ColorCard name="00" color={currentScheme.base00} />
         <ColorCard name="01" color={currentScheme.base01} />
         <ColorCard name="02" color={currentScheme.base02} />

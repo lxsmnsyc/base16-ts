@@ -1,6 +1,6 @@
 import hljs from 'highlight.js/lib/core';
 import typescript from 'highlight.js/lib/languages/typescript';
-import { useEffect, useRef } from 'react';
+import { JSX } from 'solid-js';
 
 hljs.registerLanguage('typescript', typescript);
 
@@ -9,16 +9,16 @@ interface HighlighterProps {
 }
 
 export default function Highlighter({ content }: HighlighterProps): JSX.Element {
-  const ref = useRef<HTMLDivElement>();
+  let ref: HTMLElement | undefined;
 
-  useEffect(() => {
-    if (ref.current) {
-      hljs.highlightElement(ref.current);
+  $effect(() => {
+    if (ref) {
+      hljs.highlightElement(ref);
     }
-  }, [content]);
+  });
 
   return (
-    <code ref={ref} className="code">
+    <code ref={ref} class="code">
       {content}
     </code>
   );

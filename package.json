@@ -1,11 +1,39 @@
 {
   "version": "0.2.0",
   "types": "dist/types/index.d.ts",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/cjs/production/index.js",
+  "module": "dist/esm/production/index.js",
   "exports": {
-    "require": "./dist/cjs/index.js",
-    "import": "./dist/esm/index.js"
+    ".": {
+      "development": {
+        "require": "./dist/cjs/development/index.js",
+        "import": "./dist/esm/development/index.js"
+      },
+      "require": "./dist/cjs/production/index.js",
+      "import": "./dist/esm/production/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./dev": {
+      "production": {
+        "require": "./dist/cjs/production/index.js",
+        "import": "./dist/esm/production/index.js"
+      },
+      "require": "./dist/cjs/development/index.js",
+      "import": "./dist/esm/development/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./esm": {
+      "development": "./dist/esm/development/index.js",
+      "production": "./dist/esm/production/index.js",
+      "default": "./dist/esm/production/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./cjs": {
+      "development": "./dist/cjs/development/index.js",
+      "production": "./dist/cjs/production/index.js",
+      "default": "./dist/cjs/production/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
   },
   "files": [
     "dist",
@@ -20,15 +48,12 @@
   ],
   "name": "base16-ts",
   "devDependencies": {
-    "@types/jest": "^26.0.22",
-    "@types/node": "^14.14.41",
-    "eslint": "^7.25.0",
-    "eslint-config-lxsmnsyc": "^0.2.1",
-    "jest": "^26.6.3",
-    "pridepack": "^0.9.2",
-    "ts-jest": "^26.5.5",
-    "tslib": "^2.2.0",
-    "typescript": "^4.2.4"
+    "@types/node": "^17.0.35",
+    "eslint": "^8.16.0",
+    "eslint-config-lxsmnsyc": "^0.4.0",
+    "pridepack": "^1.1.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.2"
   },
   "peerDependencies": {},
   "scripts": {
@@ -36,7 +61,6 @@
     "build": "pridepack build",
     "type-check": "pridepack check",
     "lint": "pridepack lint",
-    "test": "pridepack test --passWithNoTests",
     "clean": "pridepack clean",
     "watch": "pridepack watch"
   },
